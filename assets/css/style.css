@@ -1,0 +1,417 @@
+@charset "UTF-8";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: "Lemon-Milk";
+    src: url(../font/LEMONMILK-Bold.otf);
+}
+
+:root {
+    --corPrimaria: #9B51E0;
+    --corSecundaria: #2D9CDB;
+    --outros: #9DDCFF;
+    --cinza: #292929;
+    --black: #000000;
+    --white: #ffffff;
+
+
+    /*Fontes*/
+
+    --Titulos: "Lemon-Milk";
+    --padrao: "Roboto", sans-serif;
+
+}
+
+
+#bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: #0d0d0d;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2,
+h3 {
+    font-family: var(--Titulos);
+}
+
+strong {
+    color: var(--corSecundaria);
+}
+
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: var(--padrao);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/*Conteudo principal*/
+main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.perfil,
+.hardSkills,
+.socialMidia,
+.extras,
+.spotify,
+.creditos {
+    margin-bottom: 5px;
+}
+
+
+/*Parte de perfil*/
+.perfil {
+    height: 74px;
+    width: 345px;
+    background-color: var(--cinza);
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.perfil:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 163, 171, 0.124);
+}
+
+.perfil>img {
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.contPerfil {
+    margin-top: 3px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.contPerfil>h2 {
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+.contPerfil strong {
+    color: var(--corPrimaria);
+}
+
+.contPerfil>p {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.517);
+    letter-spacing: 2px;
+}
+
+.logo {
+    font-family: var(--Titulos);
+    color: var(--white);
+    text-align: right;
+}
+
+.logo>strong {
+    color: var(--corSecundaria);
+}
+
+
+/*Hard Skills*/
+.hardSkills {
+    margin-top: 15px;
+    height: 74px;
+    width: 345px;
+    background-color: var(--cinza);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.hardSkills:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 163, 171, 0.124);
+}
+
+.hardSkills>h3 {
+    margin-left: 10px;
+    text-align: left;
+    font-size: 10px;
+    color: var(--corSecundaria);
+}
+
+.iconsHardSkills {
+    margin-top: 8px;
+    font-size: 30px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.fa-brands,
+.fa-solid {
+    transition: transform 0.5s ease, box-shadow 0.3s ease, color 1s ease;
+
+}
+
+.fa-html5:hover {
+    transform: translateY(-2px);
+    color: #ff5100;
+}
+
+.fa-css3-alt:hover {
+    transform: translateY(-2px);
+    color: #0080ff;
+}
+
+.fa-js:hover {
+    transform: translateY(-2px);
+    color: #e5ff00;
+}
+
+.fa-bootstrap:hover {
+    transform: translateY(-2px);
+    color: #7b00ff;
+}
+
+.fa-git-alt:hover {
+    transform: translateY(-2px);
+    color: #ff0800;
+}
+
+
+.fa-github:hover {
+    transform: translateY(-2px);
+    color: #7700ff;
+}
+
+.fa-docker:hover {
+    transform: translateY(-2px);
+    color: #0000ff;
+}
+
+.fa-database:hover {
+    transform: translateY(-2px);
+    color: #37ff00;
+}
+
+.fa-fedora:hover {
+    transform: translateY(-2px);
+    color: #0077ff;
+}
+
+/*Social Midias*/
+.socialMidia {
+    margin-top: 15px;
+    height: 181px;
+    width: 350px;
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    gap: 15px;
+}
+
+.photo {
+    height: 181px;
+    width: 159px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+    color: var(--white);
+    background-color: var(--cinza);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.photo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 163, 171, 0.124);
+}
+
+.photo a {
+    color: #909090;
+    transition: color 0.8s ease;
+}
+
+.photo a:hover {
+    color: var(--corPrimaria);
+}
+
+.photo>img {
+    margin-top: 5px;
+}
+
+.logoSocialMidia {
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.logoSocialMidia a {
+    color: var(--white);
+}
+
+.logoSocialMidia i {
+    cursor: pointer;
+    background-color: var(--cinza);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.5s ease, box-shadow 0.3s ease, color 1s ease;
+
+}
+
+.principal {
+    flex-direction: row;
+}
+
+.secundaria i {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.fa-instagram:hover {
+    transform: translateY(-3px);
+    color: #ff00ea;
+    box-shadow: 0 12px 20px rgba(0, 163, 171, 0.124);
+}
+
+.fa-linkedin-in:hover {
+    transform: translateY(-3px);
+    color: #008cff;
+    box-shadow: 0 12px 20px rgba(0, 163, 171, 0.124);
+}
+
+.secundaria i.fa-github:hover {
+    transform: translateY(-5px);
+    color: #7700ff;
+    box-shadow: 0 12px 20px rgba(0, 163, 171, 0.124);
+}
+
+
+/*Seção portifolio e curriculo*/
+.extras {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+.portifolio {
+    font-family: var(--Titulos);
+    display: flex;
+    width: 345px;
+    height: 72px;
+    background-color: var(--corSecundaria);
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    color: var(--white);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.3s ease, color 0.8s ease, background 0.8s ease;
+}
+
+.portifolio>p {
+    font-size: 15px;
+}
+
+.portifolio i {
+    font-size: 30px;
+}
+
+.portifolio:hover {
+    background: none;
+    color: var(--corPrimaria);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 163, 171, 0.124);
+}
+
+.curriculo {
+    font-family: var(--Titulos);
+    display: flex;
+    width: 345px;
+    height: 72px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    background: none;
+    color: var(--corPrimaria);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.3s ease, color 0.8s ease, background 0.8s ease;
+}
+
+
+.curriculo>p {
+    font-size: 15px;
+}
+
+.curriculo i {
+    font-size: 30px;
+}
+
+.curriculo:hover {
+    background-color: var(--corSecundaria);
+    color: var(--white);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 163, 171, 0.124);
+}
+
+.spotify {
+    margin-top: 15px;
+    width: 341px;
+    height: 160px;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.spotify:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 163, 171, 0.124);
+}
+
+.creditos {
+    width: 347px;
+    margin-top: 15px;
+}
+
+.creditos>h3 {
+    margin-bottom: 10px;
+}
+
+.creditos>p {
+    color: rgb(222, 222, 222);
+}
