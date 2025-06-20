@@ -394,7 +394,7 @@ main {
 .spotify {
     margin-top: 15px;
     width: 341px;
-    height: 160px;
+    height: 150px;
     transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
 
