@@ -1,4 +1,4 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap");
 
 :root {
@@ -288,22 +288,46 @@ main {
   }
 }
 
-/* --- Spotify --- */
-.spotify {
-  border-radius: var(--radius-lg);
+/* --- Dev World --- */
+.dev-game {
   overflow: hidden;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
-  background: var(--surface-soft);
+  border: 1px solid rgba(151, 255, 224, 0.24);
+  border-radius: var(--radius-lg);
+  background: #171d3d;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3), 0 0 38px rgba(80, 238, 203, 0.09);
 }
 
-.spotify iframe {
+.game-scene {
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(180deg, #24284d 0%, #855378 67%, #e4938b 100%);
+  color: #f7f4ff;
+}
+
+.game-scene::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(180deg, rgba(17, 22, 52, 0.62), transparent 25%, transparent 76%, rgba(15, 23, 45, 0.66));
+}
+
+#devGameCanvas {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
-  border: 0;
-  background: transparent;
+  height: 100%;
 }
 
+@media (max-width: 520px) {
+  .game-scene {
+    height: 360px;
+  }
+}
 /* --- Footer --- */
 .creditos {
   text-align: center;
