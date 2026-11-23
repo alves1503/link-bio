@@ -3,111 +3,160 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
-  <script src="https://kit.fontawesome.com/7627166196.js" crossorigin="anonymous"></script>
-  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="author" content="Henrique Alves">
   <meta name="description"
-    content="Perfil de links de Henrique Alves com tema claro/escuro, tecnologias e contatos profissionais.">
+    content="Henrique Alves — desenvolvedor full-stack. Portfólio, currículo, stack e redes em um só lugar.">
+  <meta name="theme-color" content="#060a14" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f7fc" media="(prefers-color-scheme: light)">
+  <title>Henrique Alves — Link Bio</title>
+
+  <!-- Aplica o tema antes da pintura para evitar "flash" de cor -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("link-bio-theme");
+        var theme = stored || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.dataset.theme = theme;
+      } catch (e) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <script src="https://kit.fontawesome.com/7627166196.js" crossorigin="anonymous"></script>
   <script src="./assets/js/app.js" defer></script>
   <script type="module" src="./assets/js/dev-game.js"></script>
-  <title>Henrique Alves — Link Bio</title>
 </head>
 
 <body>
-  <canvas id="bgCanvas"></canvas>
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+  <div class="aurora" aria-hidden="true">
+    <span class="aurora__blob aurora__blob--a"></span>
+    <span class="aurora__blob aurora__blob--b"></span>
+    <span class="aurora__blob aurora__blob--c"></span>
+  </div>
 
-  <main>
-    <!-- Perfil e Redes Consolidados -->
-    <section class="perfil section-card animate-fade">
-      <div class="perfil-header">
-        <img class="perfil-img" src="./assets/img/foto.jpeg" alt="Henrique Alves">
-        <p class="label">Desenvolvedor Full-Stack</p>
-        <h1>Henrique <strong>Alves</strong></h1>
-        <a href="https://www.instagram.com/alvezwx05/" target="_blank" class="arroba">@alvezwx05</a>
-      </div>
-      <p class="bio">Projetos modernos com foco em impacto visual e performance. Estudante de ADS com experiência em
-        soluções reais.</p>
+  <div class="page">
+    <header class="topbar reveal" style="--i:0">
+      <span class="monogram" aria-label="Henrique Alves">H<span>/</span>A</span>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+      </button>
+    </header>
 
-      <div class="logoSocialMidia">
-        <a href="https://www.instagram.com/alvezwx05/" target="_blank" aria-label="Instagram"><i
-            class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/henriquedev15/" target="_blank" aria-label="LinkedIn"><i
-            class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://github.com/alves1503" target="_blank" aria-label="GitHub"><i
-            class="fa-brands fa-github"></i></a>
-      </div>
-    </section>
-
-    <!-- Ações Principais (Botões) -->
-    <section class="extras section-card animate-fade delay-1">
-      <a href="https://portifolio-alves-five.vercel.app/" target="_blank">
-        <button class="btn portifolio">
-          <i class="fa-solid fa-globe"></i>
-          <span>Acessar Portfólio</span>
-        </button>
-      </a>
-      <a href="./assets/curriculo/Curriculo-Henrique.pdf" target="_blank">
-        <button class="btn curriculo">
-          <i class="fa-solid fa-file-arrow-down"></i>
-          <span>Baixar Currículo</span>
-        </button>
-      </a>
-    </section>
-
-    <!-- Tecnologias -->
-    <section class="tech section-card animate-fade delay-2">
-      <div class="tech-row">
-        <div class="iconsScroller" aria-hidden="true">
-          <div class="iconsTrack">
-            <i class="fa-brands fa-html5" title="HTML5"></i>
-            <i class="fa-brands fa-css3-alt" title="CSS3"></i>
-            <i class="fa-brands fa-js" title="JavaScript"></i>
-            <i class="fa-brands fa-react" title="React"></i>
-            <i class="fa-brands fa-node-js" title="Node.js"></i>
-            <i class="fa-brands fa-php" title="PHP"></i>
-            <i class="fa-brands fa-python" title="Python"></i>
-            <i class="fa-solid fa-database" title="MySQL"></i>
-            <i class="fa-brands fa-docker" title="Docker"></i>
-            <i class="fa-brands fa-git-alt" title="Git"></i>
-            <i class="fa-brands fa-github" title="GitHub"></i>
-            <i class="fa-brands fa-figma" title="Figma"></i>
-            <i class="fa-brands fa-html5" title="HTML5"></i>
-            <i class="fa-brands fa-css3-alt" title="CSS3"></i>
-            <i class="fa-brands fa-js" title="JavaScript"></i>
-            <i class="fa-brands fa-react" title="React"></i>
-            <i class="fa-brands fa-node-js" title="Node.js"></i>
-            <i class="fa-brands fa-php" title="PHP"></i>
-            <i class="fa-brands fa-python" title="Python"></i>
-            <i class="fa-solid fa-database" title="MySQL"></i>
-            <i class="fa-brands fa-docker" title="Docker"></i>
-            <i class="fa-brands fa-git-alt" title="Git"></i>
-            <i class="fa-brands fa-github" title="GitHub"></i>
-            <i class="fa-brands fa-figma" title="Figma"></i>
+    <main>
+      <!-- Perfil -->
+      <section class="profile">
+        <div class="avatar reveal" style="--i:1">
+          <div class="avatar__ring" aria-hidden="true"></div>
+          <div class="avatar__frame">
+            <img src="./assets/img/foto.jpeg" alt="Foto de Henrique Alves" width="112" height="112">
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Dev game loop -->
-    <section class="dev-game animate-fade delay-3"
-      aria-label="Personagem explorando e interagindo com uma fase retrô de programação">
-      <div class="game-scene" id="gameScene">
-        <canvas id="devGameCanvas"
-          aria-label="Animação contínua de um personagem programador explorando um mundo retrô e interagindo com seus objetos"></canvas>
-      </div>
-    </section>
+        <p class="role reveal" style="--i:2"><span class="role__bracket">&lt;</span>dev full-stack<span
+            class="role__bracket"> /&gt;</span></p>
+        <h1 class="name reveal" style="--i:3">Henrique <span>Alves</span></h1>
+        <a class="handle reveal" style="--i:3" href="https://www.instagram.com/alvezwx05/" target="_blank"
+          rel="noopener">@alvezwx05</a>
 
-    <footer class="creditos animate-fade delay-4">
-      <h3><strong>H/A</strong></h3>
-      <p>© 2026 Henrique Alves. Todos os direitos reservados.</p>
+        <p class="bio reveal" style="--i:4">
+          Projetos modernos com foco em impacto visual e performance. Estudante de ADS com experiência em soluções
+          reais.
+        </p>
+
+        <nav class="socials reveal" style="--i:5" aria-label="Redes sociais">
+          <a href="https://www.instagram.com/alvezwx05/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/henriquedev15/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/alves1503" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+        </nav>
+      </section>
+
+      <!-- Links principais -->
+      <section class="links" aria-label="Links principais">
+        <a class="link link--featured reveal" style="--i:6" href="https://portifolio-alves-five.vercel.app/"
+          target="_blank" rel="noopener">
+          <span class="link__icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>
+          <span class="link__text">
+            <span class="link__title">Portfólio</span>
+            <span class="link__sub">Projetos, cases e experimentos</span>
+          </span>
+          <i class="fa-solid fa-arrow-right link__arrow" aria-hidden="true"></i>
+        </a>
+
+        <a class="link reveal" style="--i:7" href="./assets/curriculo/Curriculo-Henrique.pdf" target="_blank"
+          rel="noopener">
+          <span class="link__icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span>
+          <span class="link__text">
+            <span class="link__title">Currículo</span>
+            <span class="link__sub">PDF · formação e experiência</span>
+          </span>
+          <i class="fa-solid fa-arrow-down link__arrow" aria-hidden="true"></i>
+        </a>
+
+        <a class="link reveal" style="--i:8" href="https://www.linkedin.com/in/henriquedev15/" target="_blank"
+          rel="noopener">
+          <span class="link__icon"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></span>
+          <span class="link__text">
+            <span class="link__title">LinkedIn</span>
+            <span class="link__sub">Vamos conversar sobre projetos</span>
+          </span>
+          <i class="fa-solid fa-arrow-up-right-from-square link__arrow" aria-hidden="true"></i>
+        </a>
+      </section>
+
+      <!-- Stack -->
+      <section class="stack reveal" style="--i:9" aria-labelledby="stackTitle">
+        <h2 class="section-label" id="stackTitle"><span>//</span> stack</h2>
+        <div class="marquee">
+          <ul class="marquee__track" id="stackTrack">
+            <li><i class="fa-brands fa-html5" aria-hidden="true"></i>HTML5</li>
+            <li><i class="fa-brands fa-css3-alt" aria-hidden="true"></i>CSS3</li>
+            <li><i class="fa-brands fa-js" aria-hidden="true"></i>JavaScript</li>
+            <li><i class="fa-brands fa-react" aria-hidden="true"></i>React</li>
+            <li><i class="fa-brands fa-node-js" aria-hidden="true"></i>Node.js</li>
+            <li><i class="fa-brands fa-php" aria-hidden="true"></i>PHP</li>
+            <li><i class="fa-brands fa-python" aria-hidden="true"></i>Python</li>
+            <li><i class="fa-solid fa-database" aria-hidden="true"></i>MySQL</li>
+            <li><i class="fa-brands fa-docker" aria-hidden="true"></i>Docker</li>
+            <li><i class="fa-brands fa-git-alt" aria-hidden="true"></i>Git</li>
+            <li><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</li>
+            <li><i class="fa-brands fa-figma" aria-hidden="true"></i>Figma</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Dev World -->
+      <section class="dev-game reveal" style="--i:10"
+        aria-label="Animação: personagem programador explorando um mundo retrô">
+        <div class="game-scene" id="gameScene">
+          <canvas id="devGameCanvas" aria-hidden="true"></canvas>
+          <div class="hud" aria-hidden="true">
+            <span class="hud__title"><span class="hud__dot"></span>dev_world.exe</span>
+            <span class="hud__score">score <b id="gameScore">000000</b></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer reveal" style="--i:11">
+      <p>Feito com café &amp; código</p>
+      <p>© 2026 Henrique Alves</p>
     </footer>
-  </main>
-
-  <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
-    <i class="fa-solid fa-moon"></i>
-  </button>
+  </div>
 </body>
 
 </html>
